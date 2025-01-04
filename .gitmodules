@@ -7,3 +7,6 @@
 [submodule "einformer_laajim"]
 	path = einformer_laajim
 	url = git@github.com:MalekSamet/einformer_laajim.git
+[submodule "malek_inpainting"]
+	path = malek_inpainting
+	url = git@github.com:MalekSamet/malek_inpainting.git

@@ -66,6 +66,7 @@ conda activate ALDM
 Before starting the training, ensure that the dataset has the following structure in the folder dataset/:
 **SANPO Original:**
 dataset │ ├── sanpo │ ├── images │ ├── train │ └── val │ └── annotations ├── train └── val
+
 **SANPO Edit (3 extra classes for snow, bench & billboard):**
 dataset │ ├── sanpo │ ├── images │ ├── train │ └── val │ └── processed_annotations ├── train └── val
 
