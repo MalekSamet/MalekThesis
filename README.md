@@ -13,8 +13,9 @@ This repository enables users to perform the following tasks:
 1. **Train ALDM on SANPO**
 2. **Inference ALDM on SANPO**
 3. **Run Image Captioning w/ BLIP**
-4. **Inference Inpaint_Anything**
-5. **Segmentation Model for Evaluation**
+4. **Sanpo dataset re-annotation**
+5. **Inference Inpaint_Anything**
+6. **Segmentation Model for Evaluation**
 
 ---
 
@@ -54,7 +55,7 @@ cd meta-repo
 ```
 
 ## Features Usage
-1. **Train ALDM on SANPO**
+### 1.Train ALDM on SANPO
 
 First, we need environment_ALDM.yml:
 ```bash
@@ -63,10 +64,36 @@ conda env create -f environment.yml
 conda activate ALDM
 ```
 Before starting the training, ensure that the dataset has the following structure in the folder dataset/:
-### SANPO Original:
+**SANPO Original:**
 dataset │ ├── sanpo │ ├── images │ ├── train │ └── val │ └── annotations ├── train └── val
-### SANPO Edit (3 extra classes for snow, bench & billboard):
+**SANPO Edit (3 extra classes for snow, bench & billboard):**
 dataset │ ├── sanpo │ ├── images │ ├── train │ └── val │ └── processed_annotations ├── train └── val
 
-add smth
+To train the model:
+```cd ADLM_Laajim
+python train_ALDM.py  --sanpo_mode original --call_BLIP true
+```
+sanpo_mode: 'original' or 'edit'
+call_BLIP: true for generation of image captions, false otherwise
+
+To set more hyperparameters, check the scripts train_ALDM_sanpo_original.py or train_ALDM_sanpo.edit.py
+
+### 2.Inference ALDM on SANPO
+```cd ADLM_Laajim
+python inference_sanpo.py  --sanpo_mode original --inference_mode manual --checkpoint /path/to/model/weigths --save_dir /path/dir/to/save/outputs --folder_path /path/input/images/dir
+```
+- argument sanpo_mode: 'original' and 'edit' as explained in the previous section. It could be also 'cs', to run a pre-trained cityscapes model, and maps the sanpo input to cityscapes.
+- argument inference_mode: 'manual' allows to paste the mask input path manually in the console, as well as the prompt, n_prompt and seed within a loop until the user stops the program. For 'folder', the model infers all the masks within one directory "--folder_path". The user still gives the prompts and the seed in the console.
+
+
+### 3.Run Image Captioning with BLIP
+Generates a dict of image captions in a json file
+```cd BLIP
+python run_BLIP.py --image_folder /path/to/images/dir --output_json_path /path/output/json
+```
+### 4.SANPO dataset re-annotation**
+```
+cd einformer_laajim
+python sanpo_edit_mask_processing.py --images_dir /path/to/images/ --mask_dir /path/to/annotations --output_dir /path/to/output/directory --model_weights /path/to/model/weights
+``
 
