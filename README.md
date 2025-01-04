@@ -68,3 +68,5 @@ dataset │ ├── sanpo │ ├── images │ ├── train │ └─�
 ### SANPO Edit (3 extra classes for snow, bench & billboard):
 dataset │ ├── sanpo │ ├── images │ ├── train │ └── val │ └── processed_annotations ├── train └── val
 
+add smth
+
