@@ -4,3 +4,6 @@
 [submodule "ADLM-Laajim"]
 	path = ADLM-Laajim
 	url = git@github.com:MalekSamet/ADLM-Laajim.git
+[submodule "einformer_laajim"]
+	path = einformer_laajim
+	url = git@github.com:MalekSamet/einformer_laajim.git
