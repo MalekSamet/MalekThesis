@@ -63,8 +63,8 @@ conda env create -f environment.yml
 conda activate ALDM
 ```
 Before starting the training, ensure that the dataset has the following structure in the folder dataset/:
-For SANPO Original:
+### SANPO Original:
 sanpo/ ├── images/ │ ├── train/ │ └── val/ └── annotations/ ├── train/ └── val/
-For SANPO Edit:
+### SANPO Edit:
 sanpo/ ├── images/ │ ├── train/ │ └── val/ └── processed annotations/ ├── train/ └── val/
 
