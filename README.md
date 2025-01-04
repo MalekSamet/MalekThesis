@@ -28,10 +28,10 @@ This repository consists of the following submodules, each with its correspondin
 2. **[repo2]https://github.com/MalekSamet/BLIP_laajim.git** 
    - Conda Environment: `environment_ALDM.yml`
 
-3. **[repo3](git@github.com:MalekSamet/malek_inpainting.git)** 
+3. **[repo3]https://github.com/MalekSamet/malek_inpainting.git)** 
    - Conda Environment: `environment_inpaint.yml`
 
-4. **[repo4]git@github.com:MalekSamet/einformer_laajim.git** 
+4. **[repo4]https://github.com/MalekSamet/einformer_laajim.git** 
    - Conda Environment: `environment_oneformer.yml`
 
 5. **[repo5](https://github.com/your-username/repo5)** 
