@@ -1,0 +1,6 @@
+[submodule "BLIP_laajim"]
+	path = BLIP_laajim
+	url = git@github.com:MalekSamet/BLIP_laajim.git
+[submodule "ADLM-Laajim"]
+	path = ADLM-Laajim
+	url = git@github.com:MalekSamet/ADLM-Laajim.git
