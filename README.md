@@ -60,7 +60,7 @@ cd meta-repo
 First, we need environment_ALDM.yml:
 ```bash
 cd ADLM_Laajim
-conda env create -f environment.yml
+conda env create -f environment_ALDM.yml
 conda activate ALDM
 ```
 Before starting the training, ensure that the dataset has the following structure in the folder dataset/:
@@ -91,9 +91,32 @@ Generates a dict of image captions in a json file
 ```cd BLIP
 python run_BLIP.py --image_folder /path/to/images/dir --output_json_path /path/output/json
 ```
-### 4.SANPO dataset re-annotation**
+### 4.SANPO dataset re-annotation
 ```
 cd einformer_laajim
 python sanpo_edit_mask_processing.py --images_dir /path/to/images/ --mask_dir /path/to/annotations --output_dir /path/to/output/directory --model_weights /path/to/model/weights
-``
+```
+### 5.Inference Inpaint_Anything
+First, create and activate the environment:
+```
+cd malek_inpainting
+conda env create -f environment_inpaint.yml
+conda activate inpaint
+```
+The e-scooter insertion is performed on 3 steps:
+	1. Setting position, size and orientation of the rectngular mask on the background image
+	2. Clicking on a pixel in the white mask
+	3. Generate output image
+
+To insert e-scooter on an image, run this script:
+```
+cd malek_inpainting
+python inference_image.py --input_image /path/to/image/ --text_prompt prompt_of_object_to_insert --output_dir /path/to/output/directory --sam_ckpt /path/to/model/weigths --rectangle_width 0.65 --rectangle_height 1
+```
+To run the insertion for several images in a directory, run this script:
+```
+cd malek_inpainting
+python inference_folder.py --input_dir /path/to/images/directory --text_prompt prompt_of_object_to_insert --output_dir /path/to/output/directory --sam_ckpt /path/to/model/weigths --rectangle_width 0.65 --rectangle_height 1
+```
+
 
