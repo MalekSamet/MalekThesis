@@ -22,10 +22,10 @@ This repository enables users to perform the following tasks:
 This repository consists of the following submodules, each with its corresponding Conda environment (All environments are in the folder "/environment" and they have also copies in their corresponding repositories):
 
 1. **[repo1]https://github.com/MalekSamet/ADLM-Laajim.git** 
-   - Conda Environment: `environment_yml`
+   - Conda Environment: `environment_ALDM.yml`
 
 2. **[repo2]https://github.com/MalekSamet/BLIP_laajim.git** 
-   - Conda Environment: `env_repo2`
+   - Conda Environment: `environment_ALDM.yml`
 
 3. **[repo3](https://github.com/your-username/repo3)** 
    - Conda Environment: `env_repo3`
@@ -40,8 +40,31 @@ This repository consists of the following submodules, each with its correspondin
 
 ## Setup Instructions
 To get started, clone this repository along with its submodules:
+For HTTPS:
 
 ```bash
-git clone --recurse-submodules git@github.com:your-username/meta-repo.git
+git clone --recurse-submodules https://github.com/MalekSamet/MalekThesis.git
 cd meta-repo
+```
+For SSH:
+
+```bash
+git clone --recurse-submodules git@github.com:MalekSamet/MalekThesis.git
+cd meta-repo
+```
+
+## Features Usage
+1. **Train ALDM on SANPO**
+
+First, we need environment_ALDM.yml:
+```bash
+cd ADLM_Laajim
+conda env create -f environment.yml
+conda activate ALDM
+```
+Before starting the training, ensure that the dataset has the following structure in the folder dataset/:
+For SANPO Original:
+sanpo/ ├── images/ │ ├── train/ │ └── val/ └── annotations/ ├── train/ └── val/
+For SANPO Edit:
+sanpo/ ├── images/ │ ├── train/ │ └── val/ └── processed annotations/ ├── train/ └── val/
 
