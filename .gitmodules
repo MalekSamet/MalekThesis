@@ -1,5 +1,5 @@
-[submodule "BLIP_laajim"]
-	path = BLIP_laajim
+[submodule "BLIP_Thesis"]
+	path = BLIP_Thesis
 	url = https://github.com/MalekSamet/BLIP_Thesis.git
 [submodule "ADLM-Laajim"]
 	path = ADLM-Laajim
