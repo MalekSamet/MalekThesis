@@ -10,5 +10,3 @@
 [submodule "malek_inpainting"]
 	path = malek_inpainting
 	url = git@github.com:MalekSamet/malek_inpainting.git
-[submodule "https://github.com/MalekSamet/BLIP_laajim.git"]
-	url = https://github.com/MalekSamet/BLIP_Thesis.git
