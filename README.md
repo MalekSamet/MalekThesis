@@ -45,13 +45,13 @@ For HTTPS:
 
 ```bash
 git clone --recurse-submodules https://github.com/MalekSamet/MalekThesis.git
-cd meta-repo
+cd MalekThesis
 ```
 For SSH:
 
 ```bash
 git clone --recurse-submodules git@github.com:MalekSamet/MalekThesis.git
-cd meta-repo
+cd MalekThesis
 ```
 
 ## Features Usage
